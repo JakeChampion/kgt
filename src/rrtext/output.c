@@ -71,7 +71,7 @@ bprintf(struct render_context *ctx, const char *fmt, ...)
 	assert(ctx->scratch != NULL);
 
 	va_start(ap, fmt);
-	n = vsprintf(ctx->scratch, fmt, ap);
+	n = vsnprintf(ctx->scratch, sizeof(ctx->scratch), ap);
 	va_end(ap);
 
 	memcpy(ctx->lines[ctx->y] + ctx->x, ctx->scratch, n);
