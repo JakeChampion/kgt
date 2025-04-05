@@ -52,8 +52,7 @@ const char *css_file;
  * has no pthread support, and so a definition for __wait is not included.
  */
 #ifdef __EMSCRIPTEN__
-//void __wait(int a, int b, int c, int d) { }
-void __wait(volatile int *addr, volatile int *waiters, int val, int priv) { }
+//void __wait
 #endif
 
 struct io {
